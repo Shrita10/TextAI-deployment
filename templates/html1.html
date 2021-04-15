@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text-AI</title>
+
+
+</head>
+<body>
+
+	<center>
+
+		<h1> Text-AI</h1>
+
+
+		<form action="{{url_for('predict2')}}" method = "post" >
+
+		    <div class='regform1'> <h2> Start typing in the text box, for text prediction.</h2> </div>
+		 
+		    
+		    
+		    <textarea name="ttext" id="field1" class="resume1" rows="4" cols="50" ></textarea> <br>
+		    
+		    <button type = "submit" class = "button0"> Get the next word</button>
+		    
+		    <input type="button" onclick="myFunction1()" value={{ prediction_text1 }} id="button1"></input> 
+
+		    <input type="button" onclick="myFunction2()" value={{ prediction_text2 }} id="button2"></input> 
+
+		    <input type="button" onclick="myFunction3()" value={{ prediction_text3 }} id="button3"></input> 
+
+            <script>
+            function myFunction1() {
+              document.getElementById("field1").value = document.getElementById("field1").value + button1.value + " ";
+              document.getElementById("button1").value = {{ prediction_text1 }};
+            }
+            function myFunction2() {
+              document.getElementById("field1").value = document.getElementById("field1").value + button2.value + " ";
+              document.getElementById("button1").value = {{ prediction_text1 }};
+            }
+            function myFunction3() {
+              document.getElementById("field1").value = document.getElementById("field1").value + button3.value + " ";
+              document.getElementById("button1").value = {{ prediction_text1 }};
+            }
+            </script>
+            
+            
+		    </div>
+		    </form> 
+				
+	</center>
+
+</body>
+</html>
